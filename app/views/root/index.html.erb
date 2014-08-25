@@ -1,0 +1,11 @@
+<h1> Cageflix </h1>
+<%= link_to "Add Movie", new_movie_path %>
+
+<% @movie.each do |movie_list| %>
+  <ul>
+    <li><%= movie_list.name%>
+        <%= movie_list.year%>
+        <dt><%= movie_list.synopsis%></dt>
+    </li>
+  </ul>
+<% end %>

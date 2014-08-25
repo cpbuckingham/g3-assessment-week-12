@@ -1,0 +1,27 @@
+<h1>add movie</h1>
+  <% if @movie.errors.any? %>
+    <% @movie.errors.full_messages.each do |error| %>
+    <ul>
+    <li><%= error %></li>
+    </ul>
+    <% end %>
+  <% end %>
+</div>
+<br>
+<%= form_for @movie, url: movies_path , method: :create do |f| %>
+  <div>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :year %>
+    <br>
+    <%= f.text_field :year %>
+    <br>
+    <%= f.label :synopsis %>
+    <br>
+    <%= f.text_area :synopsis, :size => "30x10" %>
+    <br>
+    <%= f.submit "Add movie" %>
+</div>
+<% end %>
